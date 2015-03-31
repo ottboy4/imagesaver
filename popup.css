@@ -1,0 +1,176 @@
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 417px;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+.add-folder {
+    float: right;
+    margin-right: 10px;
+}
+
+header {
+    height: 100px;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+    padding: 8px;
+}
+
+.blue-underlined {
+    color: blue;
+    text-decoration: underline;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+header h2 {
+    margin-top: 20px;
+    padding-left: 100px;
+}
+
+.breadcrumb {
+    height: 25px;
+    font-size: 12pt;
+    border-bottom: solid 1px black;
+    padding: 10px;
+}
+
+.breadcrumb span a {
+    border: black ridge 2px;
+    padding: 5px;
+    background-color: #F0F8FF;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.sort_by {
+    float: right;
+}
+
+ .drop-hover.folder {
+    background-color: green;
+}
+
+.element-name {
+    max-width: 125px;
+    padding-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+.element-name editable span a, .element-name editable span input {
+    width: 80px;
+    max-width: 80px;
+    overflow: hidden;
+}
+
+.element-name span {
+    position: relative;
+}
+
+.element-download {
+    max-width: 125px;
+    padding-left: 5%;
+}
+
+.element-details {
+    max-width: 125px;
+    margin-top: 5px;
+}
+
+/*.edit-icon img:hover .edit-icon img {    *//*broken*/
+    /*background: #00FF00;*/
+/*}*/
+
+.element-name:hover .edit-icon img {
+    visibility: visible;
+}
+
+.edit-icon img {
+    height: 15px;
+    width: 15px;
+    position: relative;
+    margin: 0;
+    visibility: hidden;
+}
+
+.thumbnail-wrapper {
+    width: 75px;
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail-a {
+}
+
+.thumbnail-wrapper:hover .delete-icon img {
+    visibility: visible;
+}
+
+.delete-icon img {
+    height: 15px;
+    width: 15px;
+    position: relative;
+    margin: 0;
+    visibility: hidden;
+    bottom: 75px;
+    left: 60px;
+}
+
+.main-contents {
+    table-layout: fixed;
+    background-color: #F0F8FF;
+    margin: 0;
+    border: none;
+    /*width: 100%;*/
+}
+
+.main-contents .thumbnail {
+    width: 75px;
+    height: 75px;
+    vertical-align: middle;
+    display: block;
+}
+
+.content {
+    margin: 15px;
+    width: 100px;
+    max-width: 125px;
+    height: 100px;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.content p {
+    margin: 0;
+}
+
+
+.body {
+    padding-top: 10px;
+    background-color: #F0F8FF;
+    margin: 0;
+    width: 100%;
+}
+
+.empty-text {
+    text-align: center;
+}

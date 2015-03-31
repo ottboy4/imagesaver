@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="imageSaverModule" data-ng-csp>
+<head>
+    <title>Image Saver</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body ng-controller="QuickViewCtrl">
+
+<header>
+    <img class="icon" src="images/icon.png">
+
+    <p class="add-folder">
+        <a ng-click="addFolder()"><img
+                src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Actions-folder-new-icon.png"
+                height="25px" width="25px"></a>
+    </p>
+
+    <h2>Image Saver</h2>
+
+    <p class="sort_by">
+        Sort by:
+        <a id="sortByName" class="blue-underlined" ng-click="setSortType('name')">Name</a>
+        <a id="sortByDate" class="blue-underlined" ng-click="setSortType('saveDate')">Date</a>
+    </p>
+</header>
+<div class="breadcrumb">
+    <span ng-repeat="b in breadcrumb">
+        <a class="folder" droppable="b" ng-click="handleBreadcrumb(b)">{{b.name | ellipsify}}/</a>
+    </span>
+</div>
+<div class="body">
+    <p class="empty-text" ng-if="folder.folderContents.length == 0">Folder is empty</p>
+    <table class="main-contents" border="1" cellspacing="10">
+        <tr ng-repeat="c in imageRows">
+            <td ng-repeat="i in c" droppable="i" width="125" draggable="i" ng-class="{folder: i.isFolder}" class="content">
+                <div class="thumbnail-wrapper">
+                    <a class="thumbnail-a" ng-click="handleElementClick(i)">
+                        <img ng-src="{{i.imgUrl}}" class="thumbnail"
+                            >
+                    </a>
+                    <a class="delete-icon" ng-click="deleteFolder(i)"><img src="images/delete.png"></a>
+                </div>
+
+                <div class="element-details">
+                    <div class="element-name">
+                        <editable folder="i" update="saveRoot()" ng-click="handleElementClick(i)" edit="i.editing"
+                                  value="i.name"></editable>
+                        <a class="edit-icon" ng-click="editFolder(i)"><img src="images/edit.png"></a>
+                    </div>
+                    <p class="element-download">
+                        <a class="blue-underlined" ng-click="handleDownload(i)">Download</a>
+                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="lib/angular.min-1.2.0rc2.js"></script>
+<script src="lib/jquery-2.0.3.min.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/jszip.js"></script>
+<script src="scripts/common.js" type="text/javascript"></script>
+<script src="scripts/popup.js" type="text/javascript"></script>
+</body>
+</html>

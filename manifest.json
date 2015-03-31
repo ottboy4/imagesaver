@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+
+    "name": "Image Saver",
+    "description": "Extension for 1 click saving images.",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "webRequest",
+        "http://*/",
+        "https://*/"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["lib/jszip.js", "lib/jquery-2.0.3.min.js", "scripts/runOnPages.js"]
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "popup.html"
+    }
+}
